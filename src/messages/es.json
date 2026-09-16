@@ -1,0 +1,181 @@
+{
+  "metadata": {
+    "title": "TechToJob — Comunidad de desarrolladores y empresas tech",
+    "description": "Comunidad de desarrolladores y empresas tech en español. Te encuentran, participas en torneos y accedes a oportunidades reales."
+  },
+  "hero": {
+    "title": "Deja de mandar CVs al vacío",
+    "subtitle": "TechToJob es la comunidad donde desarrolladores y empresas se conocen antes de que exista una vacante. Construyes, participas y te ven trabajar.",
+    "cta": "Entrar a la comunidad"
+  },
+  "howItWorks": {
+    "title": "Cómo funciona",
+    "subtitle": "El recorrido desde que llegas hasta que sale una oportunidad.",
+    "steps": [
+      {
+        "title": "Entra al Discord",
+        "description": "Únete a la comunidad y conoce a desarrolladores y empresas del sector."
+      },
+      {
+        "title": "Participa",
+        "description": "Contribuye en canales, responde dudas, comparte proyectos."
+      },
+      {
+        "title": "Te conocen",
+        "description": "Las empresas ven tu trabajo antes de contratar."
+      },
+      {
+        "title": "Salen oportunidades",
+        "description": "Ofertas reales que surgen de la comunidad, no de formularios."
+      }
+    ]
+  },
+  "talent": {
+    "title": "Ofrécete como talento",
+    "subtitle": "Publica tu perfil con tu stack, tu nivel y qué buscas.",
+    "features": [
+      "Sin filtros automáticos que descarten tu CV antes de que lo lea una persona",
+      "No hace falta ser senior",
+      "No cuesta dinero"
+    ],
+    "cta": "Crear mi perfil"
+  },
+  "companies": {
+    "title": "Publica como empresa",
+    "subtitle": "Publica lo que buscas y accede a perfiles de desarrolladores reales.",
+    "features": [
+      "Ves a la gente trabajar antes de contratarla",
+      "Menos criba y más contexto real",
+      "Acceso directo a perfiles verificados"
+    ],
+    "cta": "Publicar oferta"
+  },
+  "tournaments": {
+    "title": "Torneos",
+    "subtitle": "Competiciones abiertas como esta.",
+    "features": [
+      "Aprender construyendo algo real",
+      "Tener algo que enseñar en una entrevista",
+      "Darse a conocer en la comunidad"
+    ],
+    "cta": "Ver torneos"
+  },
+  "networking": {
+    "title": "Networking",
+    "subtitle": "Canales por área y gente del sector.",
+    "features": [
+      "Dudas resueltas en minutos",
+      "Ofertas que alguien comparte porque conoce a quien contrata",
+      "Buena parte de los trabajos buenos no se encuentran, se enteran"
+    ],
+    "cta": "Unirme"
+  },
+  "testimonials": {
+    "title": "Qué dice la gente",
+    "subtitle": "Testimonios de miembros de la comunidad.",
+    "items": [
+      {
+        "name": "María García",
+        "role": "Frontend Developer",
+        "quote": "Encontré mi trabajo actual a través de TechToJob. No fue un formulario, fue una conversación."
+      },
+      {
+        "name": "Carlos López",
+        "role": "CTO en StartupX",
+        "quote": "Contratamos a tres desarrolladores de la comunidad. Su trabajo hablaba por ellos."
+      },
+      {
+        "name": "Ana Martínez",
+        "role": "Backend Developer",
+        "quote": "Los torneos me dieron proyectos reales para mostrar en entrevistas."
+      },
+      {
+        "name": "Pedro Sánchez",
+        "role": "Full Stack Developer",
+        "quote": "La comunidad es activa. Si preguntas algo, te responden en minutos."
+      }
+    ]
+  },
+  "news": {
+    "title": "Noticias",
+    "subtitle": "Novedades del proyecto y resultados de torneos.",
+    "items": [
+      {
+        "title": "Torneo #2 abierto",
+        "date": "2026-09-15",
+        "category": "Torneo",
+        "excerpt": "Ya está abierto el segundo torneo. Construye la landing de TechToJob."
+      },
+      {
+        "title": "Resultados del Torneo #1",
+        "date": "2026-09-01",
+        "category": "Resultados",
+        "excerpt": "Conoce a los ganadores y los proyectos construidos."
+      },
+      {
+        "title": "Nuevos canales de networking",
+        "date": "2026-08-20",
+        "category": "Comunidad",
+        "excerpt": "Abrimos canales específicos para Frontend, Backend y DevOps."
+      }
+    ]
+  },
+  "newsletter": {
+    "title": "Las ofertas de la semana, en tu correo",
+    "subtitle": "Cada lunes: ofertas nuevas, torneos que se abren y lo que merece la pena del sector.",
+    "placeholder": "tu@correo.com",
+    "cta": "Quiero recibirlas",
+    "disclaimer": "Sin spam. Te das de baja en un clic."
+  },
+  "cta": {
+    "title": "¿Listo para construir?",
+    "subtitle": "Únete a la comunidad y empieza a conocer gente real del sector.",
+    "cta": "Entrar al Discord"
+  },
+  "footer": {
+    "talent": {
+      "title": "Talento",
+      "links": [
+        { "label": "Crear perfil", "href": "/talento" },
+        { "label": "Ver ofertas", "href": "/ofertas" },
+        { "label": "Torneos", "href": "/torneos" }
+      ]
+    },
+    "companies": {
+      "title": "Empresas",
+      "links": [
+        { "label": "Publicar oferta", "href": "/empresas" },
+        { "label": "Ver perfiles", "href": "/perfiles" },
+        { "label": "Torneos", "href": "/torneos" }
+      ]
+    },
+    "community": {
+      "title": "Comunidad",
+      "links": [
+        { "label": "Discord", "href": "https://discord.gg/h9FFgKdkRd" },
+        { "label": "LinkedIn", "href": "https://www.linkedin.com/company/techtojob/" },
+        { "label": "X (Twitter)", "href": "https://x.com/techtojob" },
+        { "label": "Instagram", "href": "https://www.instagram.com/techtojob" }
+      ]
+    },
+    "legal": {
+      "title": "Legal",
+      "links": [
+        { "label": "Política de privacidad", "href": "/privacidad" },
+        { "label": "Términos de uso", "href": "/terminos" }
+      ]
+    },
+    "copyright": "© 2026 TechToJob. Todos los derechos reservados."
+  },
+  "navigation": {
+    "talent": "Talento",
+    "companies": "Empresas",
+    "tournaments": "Torneos",
+    "networking": "Networking",
+    "news": "Noticias"
+  },
+  "language": {
+    "es": "Español",
+    "en": "English"
+  }
+}

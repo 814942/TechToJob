@@ -1,0 +1,181 @@
+{
+  "metadata": {
+    "title": "TechToJob — Community of developers and tech companies",
+    "description": "Community of developers and tech companies in Spanish. Get discovered, participate in tournaments, and access real opportunities."
+  },
+  "hero": {
+    "title": "Stop sending CVs into the void",
+    "subtitle": "TechToJob is the community where developers and companies meet before a job opening exists. You build, participate, and they see you work.",
+    "cta": "Join the community"
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "subtitle": "The journey from arriving to landing an opportunity.",
+    "steps": [
+      {
+        "title": "Join Discord",
+        "description": "Join the community and meet developers and companies in the sector."
+      },
+      {
+        "title": "Participate",
+        "description": "Contribute in channels, answer questions, share projects."
+      },
+      {
+        "title": "Get known",
+        "description": "Companies see your work before hiring."
+      },
+      {
+        "title": "Opportunities arise",
+        "description": "Real offers that come from the community, not forms."
+      }
+    ]
+  },
+  "talent": {
+    "title": "Offer yourself as talent",
+    "subtitle": "Publish your profile with your stack, level, and what you're looking for.",
+    "features": [
+      "No automatic filters that discard your CV before a human reads it",
+      "You don't need to be senior",
+      "It's free"
+    ],
+    "cta": "Create my profile"
+  },
+  "companies": {
+    "title": "Post as a company",
+    "subtitle": "Post what you're looking for and access real developer profiles.",
+    "features": [
+      "See people work before hiring them",
+      "Less screening, more real context",
+      "Direct access to verified profiles"
+    ],
+    "cta": "Post a job"
+  },
+  "tournaments": {
+    "title": "Tournaments",
+    "subtitle": "Open competitions like this one.",
+    "features": [
+      "Learn by building something real",
+      "Have something to show in an interview",
+      "Get known in the community"
+    ],
+    "cta": "View tournaments"
+  },
+  "networking": {
+    "title": "Networking",
+    "subtitle": "Channels by area and people from the sector.",
+    "features": [
+      "Questions answered in minutes",
+      "Job offers shared by someone who knows the hiring manager",
+      "Many good jobs aren't found, they're heard about"
+    ],
+    "cta": "Join"
+  },
+  "testimonials": {
+    "title": "What people say",
+    "subtitle": "Testimonials from community members.",
+    "items": [
+      {
+        "name": "María García",
+        "role": "Frontend Developer",
+        "quote": "I found my current job through TechToJob. It wasn't a form, it was a conversation."
+      },
+      {
+        "name": "Carlos López",
+        "role": "CTO at StartupX",
+        "quote": "We hired three developers from the community. Their work spoke for itself."
+      },
+      {
+        "name": "Ana Martínez",
+        "role": "Backend Developer",
+        "quote": "Tournaments gave me real projects to show in interviews."
+      },
+      {
+        "name": "Pedro Sánchez",
+        "role": "Full Stack Developer",
+        "quote": "The community is active. If you ask something, they respond in minutes."
+      }
+    ]
+  },
+  "news": {
+    "title": "News",
+    "subtitle": "Project updates and tournament results.",
+    "items": [
+      {
+        "title": "Tournament #2 open",
+        "date": "2026-09-15",
+        "category": "Tournament",
+        "excerpt": "The second tournament is now open. Build TechToJob's landing page."
+      },
+      {
+        "title": "Tournament #1 results",
+        "date": "2026-09-01",
+        "category": "Results",
+        "excerpt": "Meet the winners and the projects built."
+      },
+      {
+        "title": "New networking channels",
+        "date": "2026-08-20",
+        "category": "Community",
+        "excerpt": "We opened specific channels for Frontend, Backend, and DevOps."
+      }
+    ]
+  },
+  "newsletter": {
+    "title": "Weekly offers in your inbox",
+    "subtitle": "Every Monday: new offers, tournaments opening, and what's worth it in the sector.",
+    "placeholder": "you@email.com",
+    "cta": "I want them",
+    "disclaimer": "No spam. Unsubscribe with one click."
+  },
+  "cta": {
+    "title": "Ready to build?",
+    "subtitle": "Join the community and start meeting real people in the sector.",
+    "cta": "Join Discord"
+  },
+  "footer": {
+    "talent": {
+      "title": "Talent",
+      "links": [
+        { "label": "Create profile", "href": "/talent" },
+        { "label": "View offers", "href": "/offers" },
+        { "label": "Tournaments", "href": "/tournaments" }
+      ]
+    },
+    "companies": {
+      "title": "Companies",
+      "links": [
+        { "label": "Post a job", "href": "/companies" },
+        { "label": "View profiles", "href": "/profiles" },
+        { "label": "Tournaments", "href": "/tournaments" }
+      ]
+    },
+    "community": {
+      "title": "Community",
+      "links": [
+        { "label": "Discord", "href": "https://discord.gg/h9FFgKdkRd" },
+        { "label": "LinkedIn", "href": "https://www.linkedin.com/company/techtojob/" },
+        { "label": "X (Twitter)", "href": "https://x.com/techtojob" },
+        { "label": "Instagram", "href": "https://www.instagram.com/techtojob" }
+      ]
+    },
+    "legal": {
+      "title": "Legal",
+      "links": [
+        { "label": "Privacy Policy", "href": "/privacy" },
+        { "label": "Terms of Service", "href": "/terms" }
+      ]
+    },
+    "copyright": "© 2026 TechToJob. All rights reserved."
+  },
+  "navigation": {
+    "talent": "Talent",
+    "companies": "Companies",
+    "tournaments": "Tournaments",
+    "networking": "Networking",
+    "news": "News"
+  },
+  "language": {
+    "es": "Español",
+    "en": "English"
+  }
+}
