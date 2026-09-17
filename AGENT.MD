@@ -8,7 +8,7 @@
 
 | Layer | Technology | Version |
 |-------|-----------|---------|
-| Framework | Next.js (App Router) | 14+ |
+| Framework | Next.js (App Router) | 16+ |
 | Language | TypeScript | 5+ |
 | Styling | Tailwind CSS | v4 |
 | Components | Shadcn/ui | latest |
@@ -17,6 +17,144 @@
 | Animations | Motion (framer-motion) | latest |
 | Linting | ESLint + Prettier | latest |
 | Font | Sora (Google Fonts) | 3 weights |
+
+---
+
+## Visual Identity — Design North Star
+
+Every design decision MUST align with this identity. When in doubt, refer back here.
+
+### Brand Essence
+
+**TechToJob = Tech community, not job portal.**
+
+The visual identity must feel:
+- **Modern tech** — Startup/SaaS aesthetic, not corporate
+- **Clean & airy** — Generous whitespace, nothing cramped
+- **Developer-friendly** — Dark accents, code-like elements, monospace touches
+- **Trustworthy** — Professional but not boring
+
+### Color System — Extended Palette
+
+```css
+@theme {
+  /* === BASE (tournament fixed) === */
+  --color-primary: #2f3436;      /* 30% — text, headers, dark sections */
+  --color-accent: #84c0bf;       /* 10% — CTAs, badges, highlights */
+  --color-surface: #ffffff;      /* 60% — backgrounds, whitespace */
+
+  /* === EXTENDED (supporting) === */
+  --color-neon: #a855f7;         /* Purple — tech accent, hover states */
+  --color-glow: #22d3ee;         /* Cyan — links, active states, glow */
+  --color-muted: #2f3436b3;      /* 70% opacity — secondary text */
+  --color-border: #2f34361a;      /* 10% opacity — dividers, borders */
+  --color-surface-alt: #f8fafc;  /* Light gray — alternating sections */
+}
+```
+
+### Color Usage Rules
+
+| Element | Color | Notes |
+|---------|-------|-------|
+| **Primary buttons** | `accent` bg + `primary` text | WCAG compliant |
+| **Secondary buttons** | `transparent` bg + `primary` text + `border` |
+| **Hover states** | `glow` border or `neon` subtle bg | Never replace primary |
+| **Links** | `primary` default, `glow` on hover |
+| **Badges/Chips** | `accent` bg + `primary` text |
+| **Section alternation** | `surface` → `surface-alt` | Subtle rhythm |
+| **Hero accents** | `neon` or `glow` gradient touches | Sparingly |
+
+### ⚠️ Contrast Rules
+
+- `accent` (#84c0bf) on `surface` (#ffffff) → **FAILS WCAG** for small text
+- Use `accent` ONLY for: button backgrounds (with dark text), badges, decorative elements
+- NEVER for: paragraphs, nav text, form labels, headings
+
+### Typography
+
+```
+Font: Sora (via next/font/google)
+Weights: 400 (regular), 600 (semibold), 700 (bold)
+
+Headlines: Sora 700, primary color
+Subheadlines: Sora 600, primary color
+Body: Sora 400, primary color
+Small/Labels: Sora 400, muted color
+```
+
+### Spacing & Layout
+
+- **Generous padding:** Sections use `py-16 md:py-24 lg:py-32`
+- **Max width:** Content constrained to `max-w-7xl` (1280px)
+- **Grid gap:** `gap-6 md:gap-8` for card grids
+- **Section rhythm:** Alternate `surface` and `surface-alt` backgrounds
+
+### Borders & Shadows
+
+```tsx
+// Cards
+"rounded-xl border border-border bg-surface shadow-sm"
+
+// Cards on hover (subtle glow)
+"rounded-xl border border-glow/30 bg-surface shadow-md shadow-glow/10"
+
+// Buttons
+"rounded-lg px-6 py-3 font-semibold transition-all"
+
+// Inputs
+"rounded-lg border border-border bg-surface px-4 py-3"
+```
+
+### Animations — Motion
+
+```tsx
+// Scroll reveal (used on sections)
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+>
+
+// Hover lift (cards)
+whileHover={{ y: -4 }}
+
+// Subtle scale (buttons)
+whileHover={{ scale: 1.02 }}
+whileTap={{ scale: 0.98 }}
+```
+
+**Rules:**
+- `viewport={{ once: true }}` — animate only on first scroll
+- Duration: 0.3-0.5s max
+- Only opacity + transform (GPU accelerated)
+- Respect `prefers-reduced-motion`
+
+### Component Patterns
+
+**Cards:**
+```tsx
+className="rounded-xl border border-border bg-surface p-6 shadow-sm
+           transition-all hover:border-glow/30 hover:shadow-md hover:shadow-glow/10"
+```
+
+**Buttons:**
+```tsx
+// Primary
+className="rounded-lg bg-accent px-6 py-3 font-semibold text-primary
+           transition-all hover:bg-accent/90 hover:shadow-md"
+
+// Secondary
+className="rounded-lg border border-border bg-transparent px-6 py-3
+           font-semibold text-primary transition-all hover:border-glow/50"
+```
+
+**Section backgrounds:**
+```tsx
+// Alternating
+<section className="bg-surface py-16 md:py-24">...</section>
+<section className="bg-surface-alt py-16 md:py-24">...</section>
+```
 
 ---
 

@@ -1,23 +1,34 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #2f3436;
+  /* === BASE (tournament fixed) === */
   --primary: #2f3436;
   --accent: #84c0bf;
   --surface: #ffffff;
+
+  /* === EXTENDED (supporting) === */
+  --neon: #a855f7;
+  --glow: #22d3ee;
   --muted: #2f3436b3;
   --border: #2f34361a;
+  --surface-alt: #f8fafc;
+
+  /* === ALIASES === */
+  --background: var(--surface);
+  --foreground: var(--primary);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-accent: var(--accent);
   --color-surface: var(--surface);
+  --color-neon: var(--neon);
+  --color-glow: var(--glow);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  --color-surface-alt: var(--surface-alt);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
   --font-sans: var(--font-sora);
 }
 

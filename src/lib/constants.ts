@@ -8,9 +8,17 @@ export const SITE = {
 } as const
 
 export const COLORS = {
+  // Base (tournament fixed)
   primary: '#2f3436',
   accent: '#84c0bf',
   surface: '#ffffff',
+
+  // Extended (supporting)
+  neon: '#a855f7',
+  glow: '#22d3ee',
+  muted: '#2f3436b3',
+  border: '#2f34361a',
+  surfaceAlt: '#f8fafc',
 } as const
 
 export const FONTS = {
