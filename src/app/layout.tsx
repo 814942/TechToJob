@@ -48,8 +48,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className={`${sora.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+    <html lang="es" className={`${sora.variable} h-full antialiased`}>
+        <body className="min-h-full flex flex-col font-sans">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'Organization',
+                name: 'TechToJob',
+                url: 'https://techtojob.com',
+                sameAs: [
+                  'https://discord.gg/h9FFgKdkRd',
+                  'https://www.linkedin.com/company/techtojob/',
+                  'https://x.com/techtojob',
+                  'https://www.instagram.com/techtojob',
+                ],
+              }),
+            }}
+          />
+          {children}
+        </body>
     </html>
   );
 }

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320">
+  <!-- Background -->
+  <rect width="400" height="320" rx="16" fill="#f8fafc"/>
+  
+  <!-- Card -->
+  <rect x="24" y="24" width="352" height="272" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  
+  <!-- Avatar -->
+  <circle cx="100" cy="80" r="32" fill="#84c0bf"/>
+  <circle cx="100" cy="80" r="28" fill="#2f3436"/>
+  <text x="100" y="85" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="600">JD</text>
+  
+  <!-- Name placeholder -->
+  <rect x="148" y="64" width="120" height="12" rx="4" fill="#2f3436"/>
+  <rect x="148" y="84" width="80" height="8" rx="4" fill="#cbd5e1"/>
+  
+  <!-- Status badge -->
+  <rect x="300" y="68" width="60" height="24" rx="12" fill="#84c0bf"/>
+  <text x="330" y="84" text-anchor="middle" fill="#2f3436" font-family="sans-serif" font-size="10" font-weight="600">Activo</text>
+  
+  <!-- Stack section -->
+  <text x="48" y="140" fill="#2f3436" font-family="sans-serif" font-size="12" font-weight="600">Stack</text>
+  
+  <!-- Stack badges -->
+  <rect x="48" y="152" width="60" height="28" rx="6" fill="#f3e8ff"/>
+  <text x="78" y="170" text-anchor="middle" fill="#a855f7" font-family="sans-serif" font-size="11" font-weight="500">React</text>
+  
+  <rect x="116" y="152" width="80" height="28" rx="6" fill="#ecfeff"/>
+  <text x="156" y="170" text-anchor="middle" fill="#22d3ee" font-family="sans-serif" font-size="11" font-weight="500">TypeScript</text>
+  
+  <rect x="204" y="152" width="64" height="28" rx="6" fill="#f0fdfa"/>
+  <text x="236" y="170" text-anchor="middle" fill="#84c0bf" font-family="sans-serif" font-size="11" font-weight="500">Node.js</text>
+  
+  <rect x="276" y="152" width="52" height="28" rx="6" fill="#f1f5f9"/>
+  <text x="302" y="170" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="11" font-weight="500">SQL</text>
+  
+  <!-- Level section -->
+  <text x="48" y="210" fill="#2f3436" font-family="sans-serif" font-size="12" font-weight="600">Nivel</text>
+  <rect x="48" y="220" width="160" height="8" rx="4" fill="#e2e8f0"/>
+  <rect x="48" y="220" width="96" height="8" rx="4" fill="#84c0bf"/>
+  <text x="220" y="228" fill="#64748b" font-family="sans-serif" font-size="11">Mid-Level</text>
+  
+  <!-- Availability -->
+  <text x="48" y="260" fill="#2f3436" font-family="sans-serif" font-size="12" font-weight="600">Disponibilidad</text>
+  <rect x="48" y="270" width="100" height="24" rx="6" fill="#ecfeff"/>
+  <text x="98" y="286" text-anchor="middle" fill="#22d3ee" font-family="sans-serif" font-size="11" font-weight="500">Full-time</text>
+</svg>

@@ -38,7 +38,8 @@
       "No hace falta ser senior",
       "No cuesta dinero"
     ],
-    "cta": "Crear mi perfil"
+    "cta": "Crear mi perfil",
+    "placeholder": "Vista previa del perfil"
   },
   "companies": {
     "title": "Publica como empresa",
@@ -48,7 +49,8 @@
       "Menos criba y más contexto real",
       "Acceso directo a perfiles verificados"
     ],
-    "cta": "Publicar oferta"
+    "cta": "Publicar oferta",
+    "placeholder": "Panel de empresa"
   },
   "tournaments": {
     "title": "Torneos",
@@ -58,7 +60,12 @@
       "Tener algo que enseñar en una entrevista",
       "Darse a conocer en la comunidad"
     ],
-    "cta": "Ver torneos"
+    "cta": "Ver torneos",
+    "deadline": "Fecha límite:",
+    "status": {
+      "open": "Abierto",
+      "closed": "Cerrado"
+    }
   },
   "networking": {
     "title": "Networking",
@@ -68,7 +75,12 @@
       "Ofertas que alguien comparte porque conoce a quien contrata",
       "Buena parte de los trabajos buenos no se encuentran, se enteran"
     ],
-    "cta": "Unirme"
+    "cta": "Unirme",
+    "iconLabels": {
+      "channels": "Canales",
+      "discussions": "Debates",
+      "community": "Comunidad"
+    }
   },
   "testimonials": {
     "title": "Qué dice la gente",
@@ -136,17 +148,17 @@
     "talent": {
       "title": "Talento",
       "links": [
-        { "label": "Crear perfil", "href": "/talento" },
-        { "label": "Ver ofertas", "href": "/ofertas" },
-        { "label": "Torneos", "href": "/torneos" }
+        { "label": "Crear perfil", "href": "#" },
+        { "label": "Ver ofertas", "href": "#" },
+        { "label": "Torneos", "href": "#" }
       ]
     },
     "companies": {
       "title": "Empresas",
       "links": [
-        { "label": "Publicar oferta", "href": "/empresas" },
-        { "label": "Ver perfiles", "href": "/perfiles" },
-        { "label": "Torneos", "href": "/torneos" }
+        { "label": "Publicar oferta", "href": "#" },
+        { "label": "Ver perfiles", "href": "#" },
+        { "label": "Torneos", "href": "#" }
       ]
     },
     "community": {
@@ -161,8 +173,8 @@
     "legal": {
       "title": "Legal",
       "links": [
-        { "label": "Política de privacidad", "href": "/privacidad" },
-        { "label": "Términos de uso", "href": "/terminos" }
+        { "label": "Política de privacidad", "href": "#" },
+        { "label": "Términos de uso", "href": "#" }
       ]
     },
     "copyright": "© 2026 TechToJob. Todos los derechos reservados."
