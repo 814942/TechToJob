@@ -148,17 +148,17 @@
     "talent": {
       "title": "Talent",
       "links": [
-        { "label": "Create profile", "href": "/talent" },
-        { "label": "View offers", "href": "/offers" },
-        { "label": "Tournaments", "href": "/tournaments" }
+        { "label": "Create profile", "href": "#" },
+        { "label": "View offers", "href": "#" },
+        { "label": "Tournaments", "href": "#" }
       ]
     },
     "companies": {
       "title": "Companies",
       "links": [
-        { "label": "Post a job", "href": "/companies" },
-        { "label": "View profiles", "href": "/profiles" },
-        { "label": "Tournaments", "href": "/tournaments" }
+        { "label": "Post a job", "href": "#" },
+        { "label": "View profiles", "href": "#" },
+        { "label": "Tournaments", "href": "#" }
       ]
     },
     "community": {
@@ -173,8 +173,8 @@
     "legal": {
       "title": "Legal",
       "links": [
-        { "label": "Privacy Policy", "href": "/privacy" },
-        { "label": "Terms of Service", "href": "/terms" }
+        { "label": "Privacy Policy", "href": "#" },
+        { "label": "Terms of Service", "href": "#" }
       ]
     },
     "copyright": "© 2026 TechToJob. All rights reserved."

@@ -19,7 +19,6 @@ export const Companies: FC = () => {
         width={400}
         height={320}
         className="h-auto w-full max-w-md"
-        priority
       />
     </div>
   )

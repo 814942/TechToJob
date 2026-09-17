@@ -1,15 +1,7 @@
 import type { Metadata } from "next";
-import { Sora } from "next/font/google";
 import { getMessages } from "next-intl/server";
 
 import { Providers } from "@/components/Providers";
-import "../globals.css";
-
-const sora = Sora({
-  variable: "--font-sora",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-});
 
 export const metadata: Metadata = {
   title: {
@@ -31,12 +23,8 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${sora.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans">
-        <Providers locale={locale} messages={messages}>
-          {children}
-        </Providers>
-      </body>
-    </html>
+    <Providers locale={locale} messages={messages}>
+      {children}
+    </Providers>
   );
 }
