@@ -38,7 +38,8 @@
       "You don't need to be senior",
       "It's free"
     ],
-    "cta": "Create my profile"
+    "cta": "Create my profile",
+    "placeholder": "Profile preview"
   },
   "companies": {
     "title": "Post as a company",
@@ -48,7 +49,8 @@
       "Less screening, more real context",
       "Direct access to verified profiles"
     ],
-    "cta": "Post a job"
+    "cta": "Post a job",
+    "placeholder": "Company dashboard"
   },
   "tournaments": {
     "title": "Tournaments",
@@ -58,7 +60,12 @@
       "Have something to show in an interview",
       "Get known in the community"
     ],
-    "cta": "View tournaments"
+    "cta": "View tournaments",
+    "deadline": "Deadline:",
+    "status": {
+      "open": "Open",
+      "closed": "Closed"
+    }
   },
   "networking": {
     "title": "Networking",
@@ -68,7 +75,12 @@
       "Job offers shared by someone who knows the hiring manager",
       "Many good jobs aren't found, they're heard about"
     ],
-    "cta": "Join"
+    "cta": "Join",
+    "iconLabels": {
+      "channels": "Channels",
+      "discussions": "Discussions",
+      "community": "Community"
+    }
   },
   "testimonials": {
     "title": "What people say",

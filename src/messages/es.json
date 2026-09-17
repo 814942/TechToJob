@@ -38,7 +38,8 @@
       "No hace falta ser senior",
       "No cuesta dinero"
     ],
-    "cta": "Crear mi perfil"
+    "cta": "Crear mi perfil",
+    "placeholder": "Vista previa del perfil"
   },
   "companies": {
     "title": "Publica como empresa",
@@ -48,7 +49,8 @@
       "Menos criba y más contexto real",
       "Acceso directo a perfiles verificados"
     ],
-    "cta": "Publicar oferta"
+    "cta": "Publicar oferta",
+    "placeholder": "Panel de empresa"
   },
   "tournaments": {
     "title": "Torneos",
@@ -58,7 +60,12 @@
       "Tener algo que enseñar en una entrevista",
       "Darse a conocer en la comunidad"
     ],
-    "cta": "Ver torneos"
+    "cta": "Ver torneos",
+    "deadline": "Fecha límite:",
+    "status": {
+      "open": "Abierto",
+      "closed": "Cerrado"
+    }
   },
   "networking": {
     "title": "Networking",
@@ -68,7 +75,12 @@
       "Ofertas que alguien comparte porque conoce a quien contrata",
       "Buena parte de los trabajos buenos no se encuentran, se enteran"
     ],
-    "cta": "Unirme"
+    "cta": "Unirme",
+    "iconLabels": {
+      "channels": "Canales",
+      "discussions": "Debates",
+      "community": "Comunidad"
+    }
   },
   "testimonials": {
     "title": "Qué dice la gente",

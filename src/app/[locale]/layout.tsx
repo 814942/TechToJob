@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
+import { getMessages } from "next-intl/server";
 
+import { Providers } from "@/components/Providers";
 import "../globals.css";
 
 const sora = Sora({
@@ -18,16 +20,23 @@ export const metadata: Metadata = {
     "Comunidad de desarrolladores y empresas tech en español. Te encuentran, participas en torneos y accedes a oportunidades reales.",
 };
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  return params.then(({ locale }) => (
+  const { locale } = await params;
+  const messages = await getMessages();
+
+  return (
     <html lang={locale} className={`${sora.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        <Providers locale={locale} messages={messages}>
+          {children}
+        </Providers>
+      </body>
     </html>
-  ));
+  );
 }

@@ -1,10 +1,29 @@
+import { Hero } from '@/components/organisms/Hero'
+import { HowItWorks } from '@/components/organisms/HowItWorks'
+import { Talent } from '@/components/organisms/Talent'
+import { Companies } from '@/components/organisms/Companies'
+import { Tournaments } from '@/components/organisms/Tournaments'
+import { Networking } from '@/components/organisms/Networking'
+import { Testimonials } from '@/components/organisms/Testimonials'
+import { News } from '@/components/organisms/News'
+import { CallToAction } from '@/components/organisms/CallToAction'
+import { Newsletter } from '@/components/organisms/Newsletter'
+import { Footer } from '@/components/organisms/Footer'
+
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-8">
-      <h1 className="text-4xl font-bold text-primary">TechToJob</h1>
-      <p className="mt-4 text-lg text-muted">
-        Comunidad de desarrolladores y empresas tech en español.
-      </p>
-    </main>
-  );
+    <>
+      <Hero />
+      <HowItWorks />
+      <Talent />
+      <Companies />
+      <Tournaments />
+      <Networking />
+      <Testimonials />
+      <News />
+      <CallToAction />
+      <Newsletter />
+      <Footer />
+    </>
+  )
 }
