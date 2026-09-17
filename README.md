@@ -31,7 +31,7 @@ Primera etapa del torneo. Una landing page que explica qué es TechToJob, a qui�
 ### Equipo
 
 - **Pablo** — Product Owner + Director Creativo. Decide qué se construye.
-- **GLaDOS** — Tech Lead + Implementador. Propone arquitectura e implementa.
+- **AI** — Tech Lead + Implementador. Propone arquitectura e implementa.
 
 ### Flujo
 
@@ -47,7 +47,7 @@ Primera etapa del torneo. Una landing page que explica qué es TechToJob, a qui�
 
 ### Herramientas
 
-- **Framework:** Next.js 14 (App Router)
+- **Framework:** Next.js 16 (App Router)
 - **Estilos:** Tailwind CSS v4
 - **Componentes:** Shadcn/ui
 - **i18n:** next-intl (ES/EN)
@@ -59,7 +59,7 @@ Primera etapa del torneo. Una landing page que explica qué es TechToJob, a qui�
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 20+
 - npm, yarn, o pnpm
 
 ### Installation
