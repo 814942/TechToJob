@@ -29,8 +29,8 @@ Display testimonials from community members. For the tournament, use placeholder
 
 - Card grid layout
 - Each card: name, role, quote
-- Space预留 for photo (top of card)
-- Space预留 for LinkedIn link (bottom)
+- Space reserved for photo (top of card)
+- Space reserved for LinkedIn link (bottom)
 - Mobile: single column, tablet: 2 columns, desktop: 4 columns or 2x2
 
 ### 2.3 Technical

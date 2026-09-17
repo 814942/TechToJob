@@ -24,7 +24,7 @@ Deployment setup for Vercel with automatic deploys from main branch.
 
 ### 2.2 Environment
 
-- Node.js 18+
+- Node.js 20+
 - npm as package manager
 - Build command: `npm run build`
 - Output: `.next`
