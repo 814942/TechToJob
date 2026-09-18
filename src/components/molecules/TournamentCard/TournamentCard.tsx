@@ -34,14 +34,14 @@ export const TournamentCard: FC<TournamentCardProps> = ({
             'rounded-full px-3 py-1 text-xs font-semibold',
             status === 'open'
               ? 'bg-accent text-primary'
-              : 'bg-muted/20 text-muted'
+              : 'bg-muted/20 text-primary'
           )}
         >
           {statusLabel}
         </span>
       </div>
       <p className="mb-4 text-muted">{description}</p>
-      <p className="text-sm text-muted/70">
+      <p className="text-sm text-muted">
         {deadlineLabel} {deadline}
       </p>
     </div>

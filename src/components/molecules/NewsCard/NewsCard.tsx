@@ -33,7 +33,7 @@ export const NewsCard: FC<NewsCardProps> = ({
         <span className="rounded-full bg-accent px-3 py-1 text-xs font-semibold text-primary">
           {category}
         </span>
-        <time className="text-sm text-muted/70" dateTime={date}>
+        <time className="text-sm text-muted" dateTime={date}>
           {formattedDate}
         </time>
       </div>

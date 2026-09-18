@@ -15,7 +15,7 @@ export const Hero: FC = () => {
           <h1 className="text-4xl font-bold text-primary md:text-5xl lg:text-6xl">
             {t('title')}
           </h1>
-          <p className="mt-6 text-lg text-muted md:text-xl">
+          <p className="mt-6 text-lg text-primary/80 md:text-xl">
             {t('subtitle')}
           </p>
           <div className="mt-8">
