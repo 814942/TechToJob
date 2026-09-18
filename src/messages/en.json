@@ -190,7 +190,8 @@
     "cta": "Join Discord",
     "menuOpen": "Open menu",
     "menuClose": "Close menu",
-    "langSwitch": "Switch language"
+    "langSwitch": "Switch language",
+    "scrollToTop": "Scroll to top"
   },
   "navigation": {
     "talent": "Talent",

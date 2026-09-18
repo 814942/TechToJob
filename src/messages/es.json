@@ -190,7 +190,8 @@
     "cta": "Entrar al Discord",
     "menuOpen": "Abrir menú",
     "menuClose": "Cerrar menú",
-    "langSwitch": "Cambiar idioma"
+    "langSwitch": "Cambiar idioma",
+    "scrollToTop": "Volver arriba"
   },
   "navigation": {
     "talent": "Talento",

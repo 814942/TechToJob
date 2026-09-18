@@ -1,10 +1,12 @@
 'use client'
 
 import { type FC, useState, useEffect } from 'react'
+import { useTranslations } from 'next-intl'
 import { ArrowUp } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export const ScrollToTop: FC = () => {
+  const t = useTranslations('header')
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -32,7 +34,7 @@ export const ScrollToTop: FC = () => {
   return (
     <button
       onClick={scrollToTop}
-      aria-label="Scroll to top"
+      aria-label={t('scrollToTop')}
       className={cn(
         'fixed bottom-8 right-8 z-40 rounded-full bg-accent p-3 text-primary shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl',
         visible

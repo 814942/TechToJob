@@ -138,7 +138,7 @@ export const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-primary/70 transition-colors hover:bg-primary/5 hover:text-primary"
                 >
                   <Globe className="h-4 w-4" />
-                  <span>{locale === 'es' ? 'English' : 'Español'}</span>
+                  <span>{locale === 'es' ? t('langSwitch') : t('langSwitch')}</span>
                 </button>
 
                 <a
