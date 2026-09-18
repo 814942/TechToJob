@@ -9,7 +9,7 @@ export const Hero: FC = () => {
   const t = useTranslations('hero')
 
   return (
-    <section className="flex min-h-screen items-center justify-center">
+    <section id="hero" className="flex min-h-screen items-center justify-center">
       <AnimatedSection>
         <div className="mx-auto max-w-4xl px-4 text-center">
           <h1 className="text-4xl font-bold text-primary md:text-5xl lg:text-6xl">

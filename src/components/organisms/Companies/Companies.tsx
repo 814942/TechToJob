@@ -47,7 +47,7 @@ export const Companies: FC = () => {
   )
 
   return (
-    <section className="bg-surface-alt py-20">
+    <section id="companies" className="bg-surface-alt py-20">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
           <TwoColumnLayout left={left} right={right} reverse />
