@@ -12,17 +12,20 @@ import { Footer } from '@/components/organisms/Footer'
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <HowItWorks />
-      <Talent />
-      <Companies />
-      <Tournaments />
-      <Networking />
-      <Testimonials />
-      <News />
-      <CallToAction />
-      <Newsletter />
-    </main>
+    <>
+      <main>
+        <Hero />
+        <HowItWorks />
+        <Talent />
+        <Companies />
+        <Tournaments />
+        <Networking />
+        <Testimonials />
+        <News />
+        <CallToAction />
+        <Newsletter />
+      </main>
+      <Footer />
+    </>
   )
 }
