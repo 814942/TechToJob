@@ -179,6 +179,19 @@
     },
     "copyright": "© 2026 TechToJob. Todos los derechos reservados."
   },
+  "header": {
+    "nav": {
+      "howItWorks": "Cómo funciona",
+      "companies": "Empresas",
+      "talent": "Talento",
+      "tournaments": "Torneos",
+      "news": "Noticias"
+    },
+    "cta": "Entrar al Discord",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú",
+    "langSwitch": "Cambiar idioma"
+  },
   "navigation": {
     "talent": "Talento",
     "companies": "Empresas",
