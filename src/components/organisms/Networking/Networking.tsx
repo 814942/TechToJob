@@ -1,5 +1,5 @@
 import { type FC } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { Hash, MessageSquare, Users } from 'lucide-react'
 import { SectionHeader } from '@/components/molecules/SectionHeader'
 import { FeatureList } from '@/components/molecules/FeatureList'
@@ -8,8 +8,15 @@ import { Button } from '@/components/atoms/Button'
 import { AnimatedSection } from '@/components/atoms/AnimatedSection'
 import { SITE } from '@/lib/constants'
 
+const accentWordsMap: Record<string, string[]> = {
+  en: ['Networking'],
+  es: ['Networking'],
+}
+
 export const Networking: FC = () => {
   const t = useTranslations('networking')
+  const locale = useLocale()
+  const accentWords = accentWordsMap[locale] || accentWordsMap.en
 
   const iconGrid = [
     { Icon: Hash, label: t('iconLabels.channels') },
@@ -23,6 +30,7 @@ export const Networking: FC = () => {
         title={t('title')}
         subtitle={t('subtitle')}
         className="text-left"
+        accentWords={accentWords}
       />
       <FeatureList features={t.raw('features') as string[]} />
       <div>

@@ -1,6 +1,6 @@
 import { type FC } from 'react'
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { SectionHeader } from '@/components/molecules/SectionHeader'
 import { FeatureList } from '@/components/molecules/FeatureList'
 import { TwoColumnLayout } from '@/components/molecules/TwoColumnLayout'
@@ -8,8 +8,15 @@ import { Button } from '@/components/atoms/Button'
 import { AnimatedSection } from '@/components/atoms/AnimatedSection'
 import { SITE } from '@/lib/constants'
 
+const accentWordsMap: Record<string, string[]> = {
+  en: ['company'],
+  es: ['empresa'],
+}
+
 export const Companies: FC = () => {
   const t = useTranslations('companies')
+  const locale = useLocale()
+  const accentWords = accentWordsMap[locale] || accentWordsMap.en
 
   const left = (
     <div className="flex items-center justify-center">
@@ -29,6 +36,7 @@ export const Companies: FC = () => {
         title={t('title')}
         subtitle={t('subtitle')}
         className="text-left"
+        accentWords={accentWords}
       />
       <FeatureList features={t.raw('features') as string[]} />
       <div>

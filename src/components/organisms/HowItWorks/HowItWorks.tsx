@@ -1,11 +1,18 @@
 import { type FC } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { SectionHeader } from '@/components/molecules/SectionHeader'
 import { StepCard } from '@/components/molecules/StepCard'
 import { AnimatedSection } from '@/components/atoms/AnimatedSection'
 
+const accentWordsMap: Record<string, string[]> = {
+  en: ['works'],
+  es: ['funciona'],
+}
+
 export const HowItWorks: FC = () => {
   const t = useTranslations('howItWorks')
+  const locale = useLocale()
+  const accentWords = accentWordsMap[locale] || accentWordsMap.en
 
   const steps = t.raw('steps') as Array<{ title: string; description: string }>
 
@@ -13,7 +20,11 @@ export const HowItWorks: FC = () => {
     <section id="how-it-works" className="bg-surface-alt py-20">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
-          <SectionHeader title={t('title')} subtitle={t('subtitle')} />
+          <SectionHeader
+            title={t('title')}
+            subtitle={t('subtitle')}
+            accentWords={accentWords}
+          />
         </AnimatedSection>
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
