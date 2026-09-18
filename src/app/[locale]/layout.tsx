@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { getMessages } from "next-intl/server";
 
 import { Providers } from "@/components/Providers";
+import { Header } from "@/components/layout/Header";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
 
 export const metadata: Metadata = {
   title: {
@@ -24,7 +26,9 @@ export default async function LocaleLayout({
 
   return (
     <Providers locale={locale} messages={messages}>
+      <Header locale={locale} />
       {children}
+      <ScrollToTop />
     </Providers>
   );
 }

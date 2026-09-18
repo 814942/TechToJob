@@ -48,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${sora.variable} h-full antialiased`}>
+    <html lang="es" className={`${sora.variable} h-full antialiased scroll-smooth`}>
         <body className="min-h-full flex flex-col font-sans">
           <script
             type="application/ld+json"
