@@ -82,7 +82,7 @@ export const Footer: FC = () => {
               </a>
             ))}
           </div>
-          <p className="text-sm text-white/50">{t('copyright')}</p>
+          <p className="text-sm text-white/60">{t('copyright')}</p>
         </div>
       </div>
     </footer>

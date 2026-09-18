@@ -12,7 +12,7 @@ import { Footer } from '@/components/organisms/Footer'
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Hero />
       <HowItWorks />
       <Talent />
@@ -23,7 +23,6 @@ export default function Home() {
       <News />
       <CallToAction />
       <Newsletter />
-      <Footer />
-    </>
+    </main>
   )
 }
