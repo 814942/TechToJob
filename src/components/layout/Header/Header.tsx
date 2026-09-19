@@ -1,6 +1,6 @@
 'use client'
 
-import { type FC, useState } from 'react'
+import { type FC, useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
@@ -18,9 +18,25 @@ interface HeaderProps {
 export const Header: FC<HeaderProps> = ({ locale }) => {
   const t = useTranslations('header')
   const [isOpen, setIsOpen] = useState(false)
+  const [hasScrolled, setHasScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setHasScrolled(window.scrollY > 16)
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-border/30 bg-transparent backdrop-blur-md transition-colors">
+    <header
+      className={`fixed top-0 z-50 w-full border-b transition-all ${
+        hasScrolled
+          ? 'border-border bg-surface/95 shadow-sm'
+          : 'border-border/30 bg-surface/80'
+      }`}
+    >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         {/* Left: Logo */}
         <Link href={`/${locale}`} className="flex items-center">

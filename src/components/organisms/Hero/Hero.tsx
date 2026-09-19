@@ -5,8 +5,8 @@ import { AnimatedSection } from '@/components/atoms/AnimatedSection'
 import { SITE } from '@/lib/constants'
 
 const accentWordsMap: Record<string, string[]> = {
-  en: ['CVs', ''],
-  es: ['CVs', ''],
+  en: ['CVs into the void'],
+  es: ['CVs al vacío'],
 }
 
 const renderTitleWithAccents = (
@@ -18,20 +18,34 @@ const renderTitleWithAccents = (
   }
 
   const words = title.split(' ')
-  return words.map((word, i) => {
-    const stripped = word.replace(/[^\w]/g, '').toLowerCase()
-    const isAccent = accentWords.some(
-      (accent) => accent.toLowerCase() === stripped
+  const normalize = (value: string) =>
+    value.replace(/[^\p{L}\p{N}]/gu, '').toLowerCase()
+  const accents = accentWords.map((accent) => accent.split(' ').map(normalize))
+  const nodes: ReactNode[] = []
+
+  for (let index = 0; index < words.length; ) {
+    const accent = accents.find((candidate) =>
+      candidate.every(
+        (part, offset) => normalize(words[index + offset] ?? '') === part
+      )
     )
-    if (isAccent) {
-      return (
-        <span key={i} className="text-accent pr-5 underline">
-          {word}
+
+    if (accent) {
+      nodes.push(
+        <span key={index} className="text-accent underline">
+          {words.slice(index, index + accent.length).join(' ')}
         </span>
       )
+      index += accent.length
+    } else {
+      nodes.push(words[index])
+      index += 1
     }
-    return i < words.length - 1 ? `${word} ` : word
-  })
+
+    if (index < words.length) nodes.push(' ')
+  }
+
+  return nodes
 }
 
 export const Hero: FC = () => {
