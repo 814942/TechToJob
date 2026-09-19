@@ -36,19 +36,19 @@ export const Talent: FC = () => {
   )
 
   const right = (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center overflow-hidden rounded-2xl border border-border/60 bg-surface-alt shadow-xl shadow-primary/5 transition-shadow hover:shadow-2xl">
       <Image
         src="/assets/SVG/ProfileMockup.svg"
         alt={t('placeholder')}
-        width={400}
-        height={320}
-        className="h-auto w-full max-w-md"
+        width={352}
+        height={272}
+        className="block h-auto w-full"
       />
     </div>
   )
 
   return (
-    <section id="talent" className="bg-surface py-20">
+    <section id="talent" className="bg-surface py-[5.75rem]">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
           <TwoColumnLayout left={left} right={right} />

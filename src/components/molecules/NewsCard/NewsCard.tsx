@@ -25,7 +25,7 @@ export const NewsCard: FC<NewsCardProps> = ({
   return (
     <div
       className={cn(
-        'rounded-xl border border-border bg-surface p-6 shadow-sm transition-shadow hover:shadow-md',
+        'rounded-xl border border-border/50 bg-surface/60 p-6 shadow-md backdrop-blur-md transition-shadow hover:shadow-lg',
         className
       )}
     >

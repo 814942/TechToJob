@@ -2,6 +2,7 @@
 
 import { type FC, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { Menu, X } from 'lucide-react'
 import { HeaderNav } from './HeaderNav'
@@ -19,14 +20,18 @@ export const Header: FC<HeaderProps> = ({ locale }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-border/50 bg-surface/80 backdrop-blur-md">
+    <header className="fixed top-0 z-50 w-full border-b border-border/30 bg-transparent backdrop-blur-md transition-colors">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         {/* Left: Logo */}
-        <Link
-          href={`/${locale}`}
-          className="text-lg font-bold text-primary"
-        >
-          TechToJob
+        <Link href={`/${locale}`} className="flex items-center">
+          <Image
+            src="/assets/SVG/Logo.svg"
+            alt="TechToJob"
+            width={200}
+            height={30}
+            priority
+            className="h-8 w-auto"
+          />
         </Link>
 
         {/* Center: Desktop nav */}

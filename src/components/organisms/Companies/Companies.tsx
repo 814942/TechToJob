@@ -19,13 +19,13 @@ export const Companies: FC = () => {
   const accentWords = accentWordsMap[locale] || accentWordsMap.en
 
   const left = (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center overflow-hidden rounded-2xl border border-border/60 bg-surface shadow-xl shadow-primary/5 transition-shadow hover:shadow-2xl">
       <Image
         src="/assets/SVG/DashboardMockup.svg"
         alt={t('placeholder')}
-        width={400}
-        height={320}
-        className="h-auto w-full max-w-md"
+        width={352}
+        height={272}
+        className="block h-auto w-full"
       />
     </div>
   )
@@ -48,10 +48,10 @@ export const Companies: FC = () => {
   )
 
   return (
-    <section id="companies" className="bg-surface-alt py-20">
+    <section id="companies" className="bg-surface-alt py-[5.75rem]">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
-          <TwoColumnLayout left={left} right={right} reverse />
+          <TwoColumnLayout left={right} right={left} reverse />
         </AnimatedSection>
       </div>
     </section>

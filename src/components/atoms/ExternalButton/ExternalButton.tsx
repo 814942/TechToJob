@@ -12,6 +12,7 @@ export const ExternalButton: FC<ExternalButtonProps> = ({
   href,
   children,
   linkClassName,
+  className,
   ...buttonProps
 }) => {
   return (
@@ -21,7 +22,15 @@ export const ExternalButton: FC<ExternalButtonProps> = ({
       rel="noopener noreferrer"
       className={cn('inline-block', linkClassName)}
     >
-      <Button {...buttonProps}>{children}</Button>
+      <Button
+        className={cn(
+          'shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/35',
+          className
+        )}
+        {...buttonProps}
+      >
+        {children}
+      </Button>
     </a>
   )
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTimeZone } from "next-intl/server";
 
 import { Providers } from "@/components/Providers";
 import { Header } from "@/components/layout/Header";
@@ -30,6 +30,7 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   const messages = await getMessages();
+  const timeZone = await getTimeZone();
 
   return (
     <html lang={locale} className={`${sora.variable} h-full antialiased scroll-smooth`}>
@@ -51,7 +52,7 @@ export default async function LocaleLayout({
             }),
           }}
         />
-        <Providers locale={locale} messages={messages}>
+        <Providers locale={locale} messages={messages} timeZone={timeZone}>
           <Header locale={locale} />
           {children}
           <ScrollToTop />

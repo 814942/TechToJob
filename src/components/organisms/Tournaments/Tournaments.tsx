@@ -16,7 +16,7 @@ export const Tournaments: FC = () => {
   const accentWords = accentWordsMap[locale] || accentWordsMap.en
 
   return (
-    <section id="tournaments" className="bg-surface py-20">
+    <section id="tournaments" className="bg-surface py-[5.75rem]">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
           <SectionHeader

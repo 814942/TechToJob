@@ -16,7 +16,7 @@ export const CallToAction: FC = () => {
   const accentWords = accentWordsMap[locale] || accentWordsMap.en
 
   return (
-    <section className="bg-primary py-20">
+    <section className="bg-primary py-[5.75rem]">
       <div className="mx-auto max-w-4xl px-4 text-center">
         <AnimatedSection>
           <SectionHeader

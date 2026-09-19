@@ -23,7 +23,7 @@ export const TournamentCard: FC<TournamentCardProps> = ({
   return (
     <div
       className={cn(
-        'rounded-xl border border-border bg-surface p-6 transition-shadow hover:shadow-md',
+        'rounded-xl border border-border bg-surface-alt p-6 transition-shadow hover:shadow-md',
         className
       )}
     >

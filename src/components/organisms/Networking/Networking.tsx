@@ -46,7 +46,7 @@ export const Networking: FC = () => {
       {iconGrid.map(({ Icon, label }) => (
         <div
           key={label}
-          className="flex flex-col items-center justify-center rounded-xl bg-surface p-6 shadow-sm"
+          className="flex flex-col items-center justify-center rounded-xl border border-border/50 bg-surface/60 p-6 shadow-md backdrop-blur-md transition-shadow hover:shadow-lg"
         >
           <Icon className="mb-2 h-8 w-8 text-accent" />
           <span className="text-sm font-medium text-muted">{label}</span>
@@ -56,7 +56,7 @@ export const Networking: FC = () => {
   )
 
   return (
-    <section id="networking" className="bg-surface-alt py-20">
+    <section id="networking" className="bg-surface-alt py-[5.75rem]">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
           <TwoColumnLayout left={left} right={right} />

@@ -5,8 +5,8 @@ import { AnimatedSection } from '@/components/atoms/AnimatedSection'
 import { SITE } from '@/lib/constants'
 
 const accentWordsMap: Record<string, string[]> = {
-  en: ['CVs', 'void'],
-  es: ['CVs', 'vacío'],
+  en: ['CVs', ''],
+  es: ['CVs', ''],
 }
 
 const renderTitleWithAccents = (
@@ -25,7 +25,7 @@ const renderTitleWithAccents = (
     )
     if (isAccent) {
       return (
-        <span key={i} className="text-accent">
+        <span key={i} className="text-accent pr-5 underline">
           {word}
         </span>
       )

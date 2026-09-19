@@ -23,7 +23,7 @@ export const News: FC = () => {
   const items = t.raw('items') as NewsItem[]
 
   return (
-    <section id="news" className="bg-surface-alt py-20">
+    <section id="news" className="bg-surface-alt py-[5.75rem]">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
           <SectionHeader

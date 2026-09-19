@@ -22,7 +22,7 @@ export const Testimonials: FC = () => {
   const items = t.raw('items') as TestimonialItem[]
 
   return (
-    <section id="testimonials" className="bg-surface py-20">
+    <section id="testimonials" className="bg-surface py-[5.75rem]">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
           <SectionHeader
