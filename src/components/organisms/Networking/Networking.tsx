@@ -46,7 +46,7 @@ export const Networking: FC = () => {
       {iconGrid.map(({ Icon, label }) => (
         <div
           key={label}
-          className="flex flex-col items-center justify-center rounded-xl border border-border/50 bg-surface p-6 shadow-sm transition-shadow hover:shadow-md"
+          className="flex flex-col items-center justify-center rounded-xl border border-border bg-surface p-6 shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg"
         >
           <Icon className="mb-2 h-8 w-8 text-accent" />
           <span className="text-sm font-medium text-muted">{label}</span>
