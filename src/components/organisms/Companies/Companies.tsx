@@ -4,7 +4,7 @@ import { useTranslations, useLocale } from 'next-intl'
 import { SectionHeader } from '@/components/molecules/SectionHeader'
 import { FeatureList } from '@/components/molecules/FeatureList'
 import { TwoColumnLayout } from '@/components/molecules/TwoColumnLayout'
-import { Button } from '@/components/atoms/Button'
+import { ExternalButton } from '@/components/atoms/ExternalButton'
 import { AnimatedSection } from '@/components/atoms/AnimatedSection'
 import { SITE } from '@/lib/constants'
 
@@ -40,16 +40,9 @@ export const Companies: FC = () => {
       />
       <FeatureList features={t.raw('features') as string[]} />
       <div>
-        <a
-          href={SITE.discord}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block"
-        >
-          <Button variant="primary" size="lg">
-            {t('cta')}
-          </Button>
-        </a>
+        <ExternalButton href={SITE.discord} variant="primary" size="lg">
+          {t('cta')}
+        </ExternalButton>
       </div>
     </div>
   )

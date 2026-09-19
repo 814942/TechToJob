@@ -5,9 +5,10 @@ import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { Menu, X } from 'lucide-react'
 import { HeaderNav } from './HeaderNav'
-import { HeaderCTA } from './HeaderCTA'
 import { MobileMenu } from './MobileMenu'
+import { ExternalButton } from '@/components/atoms/ExternalButton'
 import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher'
+import { SITE } from '@/lib/constants'
 
 interface HeaderProps {
   locale: string
@@ -34,7 +35,9 @@ export const Header: FC<HeaderProps> = ({ locale }) => {
         {/* Right: LanguageSwitcher + CTA (hidden on mobile) */}
         <div className="hidden items-center gap-4 md:flex">
           <LanguageSwitcher />
-          <HeaderCTA />
+          <ExternalButton href={SITE.discord} variant="primary" size="sm">
+            {t('cta')}
+          </ExternalButton>
         </div>
 
         {/* Mobile: Hamburger */}

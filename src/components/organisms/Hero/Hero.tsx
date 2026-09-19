@@ -1,9 +1,8 @@
 import { type FC, type ReactNode } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
-import { buttonVariants } from '@/components/atoms/Button'
+import { ExternalButton } from '@/components/atoms/ExternalButton'
 import { AnimatedSection } from '@/components/atoms/AnimatedSection'
 import { SITE } from '@/lib/constants'
-import { cn } from '@/lib/utils'
 
 const accentWordsMap: Record<string, string[]> = {
   en: ['CVs', 'void'],
@@ -51,17 +50,9 @@ export const Hero: FC = () => {
             {t('subtitle')}
           </p>
           <div className="mt-8">
-            <a
-              href={SITE.discord}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                buttonVariants({ variant: "primary", size: "lg" }),
-                "w-full md:w-auto"
-              )}
-            >
+            <ExternalButton href={SITE.discord} variant="primary" size="lg">
               {t('cta')}
-            </a>
+            </ExternalButton>
           </div>
         </div>
       </AnimatedSection>
