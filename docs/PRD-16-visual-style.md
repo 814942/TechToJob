@@ -1,203 +1,180 @@
-# PRD-16: Visual Style Enhancement — Shadcn Depth & Polish
+# PRD-16: Visual Style Enhancement — Typography as Protagonist
 
 > **Status:** Draft
-> **Version:** 1.0
-> **Date:** 2026-09-16
+> **Version:** 2.0
+> **Date:** 2026-09-18
 > **Parent:** PRD-00-foundation.md
+> **Reference:** https://nexavalencia.vercel.app/
 
 ---
 
 ## 1. Summary
 
-The current landing page looks "flat" — solid color backgrounds, minimal shadows, no visual depth or hierarchy between elements. This PRD upgrades the visual language to use real shadcn/ui components with proper shadows, gradients, subtle textures, and micro-interactions that make the page feel alive without being noisy.
+The current landing page is clean but "amateur" — competent typography at normal sizes, no visual personality. This PRD transforms the visual identity using **typography as the protagonist**: giant bold headings, accent color highlighting on key words, and a warm background that feels like a brand, not a template.
 
-The goal: a landing that looks like a modern SaaS/community product, not a wireframe.
+The goal: a landing with strong visual identity — minimalist but with attitude. Light theme preserved, original palette maintained.
 
 ---
 
 ## 2. Problem Statement
 
 Current state:
-- Cards have `shadow-sm` — barely visible, no depth separation
-- Buttons are flat solid colors — no gradient, no hover elevation
-- Sections alternate between `bg-surface` and `bg-surface-alt` — subtle but lifeless
-- No glassmorphism, no gradient accents, no visual texture
-- No hover states beyond basic color changes
-- The page reads as "one flat plane" instead of layered content
+- Headings are `text-4xl` → `text-6xl` — competent but safe, no presence
+- Background is `#ffffff` — cold, sterile
+- Accent color `#84c0bf` only used in buttons, never in text
+- No visual emphasis hierarchy — all text reads at the same weight
+- The page looks like a well-made template, not a brand
+
+Reference analysis (NYXA):
+- **Typography IS the design** — giant bold text as the main visual element
+- **Accent color highlights** — one word in accent color creates emphasis and rhythm
+- **Warm background** — `#fbf9f4` instead of pure white feels intentional
+- **Mono-color with attitude** — minimal palette, maximum personality
 
 Target state:
-- Cards float with real shadows and subtle hover elevation
-- Buttons have depth through gradients and micro-interactions
-- Sections use subtle gradients, glass effects, or accent borders for visual rhythm
-- Every interactive element responds to hover/touch with purpose
-- The page has clear visual hierarchy: hero → content → accent → footer
+- Headings are `text-5xl` → `text-8xl` with `font-extrabold` — commanding presence
+- Background is `#fbf9f4` — warm, intentional
+- Accent color `#84c0bf` highlights key words in headings and body text
+- Clear visual rhythm: giant heading → accent emphasis → supporting text
+- The page feels like a brand with identity, not a template
 
 ---
 
 ## 3. Design System Upgrades
 
-### 3.1 Shadows (Elevation Scale)
+### 3.1 Background — Warm Off-White
 
-Replace `shadow-sm` with a proper elevation system:
+| Token | Current | New |
+|-------|---------|-----|
+| `--surface` | `#ffffff` | `#fbf9f4` |
+| `--background` | `var(--surface)` | `var(--surface)` (unchanged) |
+
+The warm background `#fbf9f4` is the foundation. It makes the page feel intentional, not default.
+
+### 3.2 Typography — Giant & Bold
+
+**Heading scale (NYXA-inspired):**
+
+| Level | Current | New |
+|-------|---------|-----|
+| Hero h1 | `text-4xl md:text-5xl lg:text-6xl` | `text-5xl md:text-7xl lg:text-8xl` |
+| Section h2 | `text-3xl md:text-4xl` | `text-4xl md:text-5xl lg:text-6xl` |
+| Card h3 | `text-xl md:text-2xl` | `text-2xl md:text-3xl` |
+
+**Typography properties:**
+
+```css
+/* Headings — commanding presence */
+.heading-hero {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.heading-section {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+```
+
+**Font weight:** Upgrade from `700` to `800` (extrabold) for all headings.
+
+### 3.3 Accent Color in Text — The Emphasis System
+
+Create a reusable `<Accent>` pattern for highlighting key words:
+
+```tsx
+// Pattern: wrap the emphasis word in accent color
+<h1>
+  Deja de mandar <span className="text-accent">CVs al vacío</span>
+</h1>
+```
+
+**Rules for accent highlighting:**
+- ONE accent word/phrase per heading maximum
+- Accent goes on the word that carries the emotional or semantic weight
+- In body text, use accent sparingly — only for key terms
+- Accent color: `#84c0bf` (existing palette, no changes)
+
+**Examples from current content:**
+
+| Section | Heading | Accent Word |
+|---------|---------|-------------|
+| Hero | "Deja de mandar CVs al vacío" | "CVs al vacío" |
+| HowItWorks | "Cómo funciona" | No accent (short) |
+| Talent | "Ofrécete como talento" | "talento" |
+| Companies | "Publica como empresa" | "empresa" |
+| Tournaments | "Torneos" | No accent (short) |
+| Newsletter | "Las ofertas de la semana, en tu correo" | "semana" |
+| CTA | "¿Listo para construir?" | "construir" |
+
+### 3.4 Shadows — Subtle Depth (Kept Minimal)
+
+Keep shadows minimal — this is a typography-first design, not a depth-heavy one:
 
 | Level | Class | Use Case |
 |-------|-------|----------|
-| 0 | `shadow-none` | Flat elements, backgrounds |
+| 0 | `shadow-none` | Backgrounds, flat sections |
 | 1 | `shadow-sm` | Cards at rest |
-| 2 | `shadow-md` | Cards on hover, active inputs |
-| 3 | `shadow-lg` | Floating elements, dropdowns |
-| 4 | `shadow-xl` | Hero CTA emphasis, featured cards |
+| 2 | `shadow-md` | Cards on hover |
 
-**Implementation:** Define CSS custom properties for shadows or use Tailwind's built-in scale with accent-tinted shadows:
+No glass effects, no gradients on sections. The typography carries the visual weight.
 
-```css
-/* Custom shadow with accent color tint */
-.shadow-accent {
-  box-shadow: 0 4px 14px 0 rgba(132, 192, 191, 0.15);
-}
-.shadow-accent-lg {
-  box-shadow: 0 10px 30px 0 rgba(132, 192, 191, 0.2);
-}
-```
+### 3.5 Buttons — Keep Current, Add Hover Elevation
 
-### 3.2 Buttons — Gradients & Depth
-
-Upgrade the `Button` atom with gradient variants:
-
-| Variant | Background | Hover | Shadow |
-|---------|-----------|-------|--------|
-| `primary` | Gradient: `#84c0bf` → `#6bb5b4` | Brighter, elevation up | `shadow-accent` |
-| `secondary` | Gradient border (subtle) | Border brightens | None |
-| `ghost` | Transparent | Light accent bg | None |
-
-**Gradient definition:**
-
-```css
-.btn-primary {
-  background: linear-gradient(135deg, #84c0bf 0%, #6bb5b4 100%);
-}
-.btn-primary:hover {
-  background: linear-gradient(135deg, #8fd4d3 0%, #78c2c1 100%);
-  box-shadow: 0 4px 14px rgba(132, 192, 191, 0.35);
-  transform: translateY(-1px);
-}
-.btn-primary:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(132, 192, 191, 0.25);
-}
-```
-
-### 3.3 Cards — Glass & Depth
-
-Upgrade all card components with layered depth:
-
-**TestimonialCard, NewsCard, TournamentCard, StepCard:**
-
-| State | Style |
-|-------|-------|
-| Rest | `bg-white rounded-xl shadow-sm border border-border/50` |
-| Hover | `shadow-lg border-accent/20 -translate-y-0.5` transition |
-
-**Glass effect variant (optional, for feature cards):**
-
-```css
-.glass-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-```
-
-### 3.4 Section Backgrounds — Gradient Rhythms
-
-Replace flat `bg-surface-alt` with subtle gradients:
-
-| Section | Current | Proposed |
-|---------|---------|----------|
-| HowItWorks | `bg-surface-alt` | `bg-gradient-to-b from-surface-alt to-surface` |
-| Companies | `bg-surface-alt` | `bg-gradient-to-br from-surface-alt via-surface to-accent/5` |
-| Tournaments | `bg-surface` | `bg-gradient-to-b from-surface to-surface-alt` |
-| News | `bg-surface-alt` | `bg-gradient-to-b from-surface-alt to-surface` |
-| Newsletter | `bg-primary` (solid dark) | `bg-gradient-to-br from-primary via-primary to-primary/95` with subtle texture |
-
-### 3.5 Accent Elements
-
-Add visual rhythm through accent borders and decorative elements:
-
-- **Section dividers:** Subtle top border or gradient line between major sections
-- **Accent dots/badges:** Small accent-colored indicators on cards (category badges, step numbers)
-- **Hover glow:** Interactive elements get a soft accent glow on hover
+Keep existing button styles. Add only:
+- `hover:-translate-y-0.5` for micro-interaction
+- `transition-all duration-200` for smooth states
 
 ---
 
 ## 4. Component-by-Component Changes
 
-### 4.1 Button Atom (`src/components/atoms/Button/Button.tsx`)
+### 4.1 Global CSS (`src/app/globals.css`)
 
-- Add gradient background to `primary` variant
-- Add `shadow-accent` on hover
-- Add `translate-y` micro-interaction
-- Add `transition-all duration-200` for smooth state changes
+- Change `--surface` from `#ffffff` to `#fbf9f4`
+- Add heading utility classes (`.heading-hero`, `.heading-section`)
+- Add `font-weight: 800` to heading defaults
 
-### 4.2 TestimonialCard (`src/components/molecules/TestimonialCard/TestimonialCard.tsx`)
+### 4.2 Hero Section (`src/components/organisms/Hero/Hero.tsx`)
 
-- Increase shadow from `shadow-sm` to `shadow-md` at rest
-- Add `hover:shadow-lg hover:-translate-y-0.5` transition
-- Add subtle accent top border: `border-t-2 border-accent/30`
-- Avatar placeholder: gradient background instead of flat accent
+- Upgrade h1 to `text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight`
+- Add accent highlight: `<span className="text-accent">CVs al vacío</span>`
+- Increase spacing between heading and subtitle
 
-### 4.3 NewsCard (`src/components/molecules/NewsCard/NewsCard.tsx`)
+### 4.3 Section Headers (all organisms)
 
-- Add hover elevation: `hover:shadow-lg hover:-translate-y-0.5`
-- Category badge: gradient accent background
-- Add subtle left border accent on hover
+Apply to: HowItWorks, Talent, Companies, Tournaments, Networking, Testimonials, News, Newsletter, CTA
 
-### 4.4 StepCard (`src/components/molecules/StepCard/StepCard.tsx`)
+- Upgrade h2 to `text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight`
+- Add accent highlight on key word where semantically appropriate
+- Increase spacing below subtitle
 
-- Step number: gradient circle instead of flat accent
-- Add hover glow effect
-- Connector line between steps (desktop): subtle gradient line
+### 4.4 i18n Messages (`src/messages/es.json`, `src/messages/en.json`)
 
-### 4.5 TournamentCard (`src/components/molecules/TournamentCard/TournamentCard.tsx`)
+- Review all headings for accent word candidates
+- Ensure accent words are semantically meaningful (not arbitrary)
 
-- Status badge: gradient for "open", muted for "closed"
-- Add hover elevation
-- Accent border on featured tournaments
+### 4.5 Button Atom (`src/components/atoms/Button/Button.tsx`)
 
-### 4.6 SectionHeader (`src/components/molecules/SectionHeader/SectionHeader.tsx`)
-
-- Title: consider subtle gradient text for section titles (accent → primary)
-- Subtitle: keep muted, but add more spacing
-- Decorative accent line under title
-
-### 4.7 Hero Section (`src/components/organisms/Hero/Hero.tsx`)
-
-- Add subtle background gradient or mesh pattern
-- CTA button: larger, with accent shadow and glow
-- Add floating accent shapes (CSS-only decorative elements)
-
-### 4.8 Newsletter Section (`src/components/organisms/Newsletter/Newsletter.tsx`)
-
-- Input field: glass effect with backdrop blur
-- Submit button: gradient with glow on hover
-- Background: rich gradient instead of flat dark
+- Add `hover:-translate-y-0.5 transition-all duration-200`
+- No gradient changes — keep existing style
 
 ---
 
-## 5. CSS Variables to Add
+## 5. CSS Variables to Update
 
 ```css
 :root {
-  /* Shadows */
-  --shadow-accent: 0 4px 14px 0 rgba(132, 192, 191, 0.15);
-  --shadow-accent-lg: 0 10px 30px 0 rgba(132, 192, 191, 0.2);
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-card-hover: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+  /* Background — warm off-white */
+  --surface: #fbf9f4;
 
-  /* Gradients */
-  --gradient-accent: linear-gradient(135deg, #84c0bf 0%, #6bb5b4 100%);
-  --gradient-accent-hover: linear-gradient(135deg, #8fd4d3 0%, #78c2c1 100%);
-  --gradient-surface: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  /* Shadows — minimal, kept for cards only */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 ```
 
@@ -205,45 +182,40 @@ Add visual rhythm through accent borders and decorative elements:
 
 ## 6. Acceptance Criteria
 
-- [ ] All cards have visible shadows at rest (level 1+)
-- [ ] All cards elevate on hover (shadow + translate)
-- [ ] Primary buttons have gradient background
-- [ ] Buttons show elevation change on hover
-- [ ] Sections have gradient backgrounds (not flat colors)
-- [ ] Newsletter input has glass/depth effect
-- [ ] Hero has visual depth (gradient bg or decorative elements)
-- [ ] All transitions are smooth (200-300ms)
-- [ ] No performance regression (shadows/gradients are GPU-composited)
-- [ ] Visual hierarchy is clear: hero > content cards > footer
+- [ ] Background is `#fbf9f4` across all sections
+- [ ] Hero h1 is `text-5xl md:text-7xl lg:text-8xl font-extrabold`
+- [ ] Section h2s are `text-4xl md:text-5xl lg:text-6xl font-extrabold`
+- [ ] At least 5 headings have accent color highlights on key words
+- [ ] Accent highlights are semantically meaningful (not random)
+- [ ] Headings use `letter-spacing: -0.02em` to `-0.03em`
+- [ ] Visual hierarchy is clear: giant heading > accent emphasis > body
 - [ ] Still passes WCAG AA contrast requirements
-- [ ] Mobile: shadows/gradients still render correctly
-- [ ] `prefers-reduced-motion`: transitions disabled gracefully
+- [ ] Mobile: headings scale down gracefully via `clamp()` or responsive classes
+- [ ] `prefers-reduced-motion`: no animation changes needed (typography-only)
+- [ ] No new dependencies added
 
 ---
 
 ## 7. Out of Scope
 
-- Complete redesign of layout or information architecture
-- New illustrations or photography
 - Dark mode
-- Animation sequences (PRD-12 handles that)
+- Section background gradients
+- Glass effects or backdrop blur
 - New components not listed above
+- Animation sequences (PRD-12 handles that)
 
 ---
 
 ## 8. Dependencies
 
-- `PRD-00-foundation` — Shadcn/ui, Tailwind v4, CSS variables defined
-- `PRD-12-animations` — may overlap on hover transitions (coordinate)
-- Current component library must be stable before applying visual upgrades
+- `PRD-00-foundation` — Tailwind v4, CSS variables defined
+- No coordination needed with PRD-12 (no animation overlap)
 
 ---
 
 ## 9. Implementation Notes
 
-- Apply changes incrementally: buttons first → cards → sections → hero
-- Test shadow rendering on低端 devices (some Android browsers struggle with large blur radius)
-- Use `will-change: transform` sparingly on hoverable elements
-- Gradient text (`background-clip: text`) needs `-webkit-` prefix for Safari
-- `backdrop-filter` needs `-webkit-` prefix for Safari
-- Verify Lighthouse Performance stays ≥90 after changes
+- Start with global CSS (background change), then Hero, then sections
+- Use `clamp()` for fluid typography where possible
+- Accent color `#84c0bf` has sufficient contrast on `#fbf9f4` background — verify with Lighthouse
+- Keep changes minimal and focused — this is a typography upgrade, not a redesign

@@ -1,5 +1,5 @@
 import { type FC } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { SectionHeader } from '@/components/molecules/SectionHeader'
 import { NewsCard } from '@/components/molecules/NewsCard'
 import { AnimatedSection } from '@/components/atoms/AnimatedSection'
@@ -11,15 +11,26 @@ interface NewsItem {
   excerpt: string
 }
 
+const accentWordsMap: Record<string, string[]> = {
+  en: ['News'],
+  es: ['Noticias'],
+}
+
 export const News: FC = () => {
   const t = useTranslations('news')
+  const locale = useLocale()
+  const accentWords = accentWordsMap[locale] || accentWordsMap.en
   const items = t.raw('items') as NewsItem[]
 
   return (
-    <section id="news" className="bg-surface-alt py-20">
+    <section id="news" className="bg-surface-alt py-[5.75rem]">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
-          <SectionHeader title={t('title')} subtitle={t('subtitle')} />
+          <SectionHeader
+            title={t('title')}
+            subtitle={t('subtitle')}
+            accentWords={accentWords}
+          />
         </AnimatedSection>
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item, index) => (

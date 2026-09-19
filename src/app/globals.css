@@ -4,7 +4,7 @@
   /* === BASE (tournament fixed) === */
   --primary: #2f3436;
   --accent: #84c0bf;
-  --surface: #ffffff;
+  --surface: #fbf9f4;
 
   /* === EXTENDED (supporting) === */
   --neon: #a855f7;
@@ -30,6 +30,10 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sora);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

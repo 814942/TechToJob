@@ -1,13 +1,20 @@
 'use client'
 
 import { type FC, type FormEvent, useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { SectionHeader } from '@/components/molecules/SectionHeader'
 import { Button } from '@/components/atoms/Button'
 import { AnimatedSection } from '@/components/atoms/AnimatedSection'
 
+const accentWordsMap: Record<string, string[]> = {
+  en: ['offers'],
+  es: ['ofertas'],
+}
+
 export const Newsletter: FC = () => {
   const t = useTranslations('newsletter')
+  const locale = useLocale()
+  const accentWords = accentWordsMap[locale] || accentWordsMap.en
   const [email, setEmail] = useState('')
 
   const handleSubmit = (e: FormEvent) => {
@@ -24,6 +31,7 @@ export const Newsletter: FC = () => {
             title={t('title')}
             subtitle={t('subtitle')}
             dark
+            accentWords={accentWords}
           />
           <form onSubmit={handleSubmit} className="mt-8">
             <label htmlFor="newsletter-email" className="sr-only">

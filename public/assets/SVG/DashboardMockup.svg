@@ -1,7 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320">
-  <!-- Background -->
-  <rect width="400" height="320" rx="16" fill="#f8fafc"/>
-  
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="24 24 352 272">
   <!-- Dashboard frame -->
   <rect x="24" y="24" width="352" height="272" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
   

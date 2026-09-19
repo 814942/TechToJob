@@ -1,15 +1,22 @@
 import { type FC } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { Hash, MessageSquare, Users } from 'lucide-react'
 import { SectionHeader } from '@/components/molecules/SectionHeader'
 import { FeatureList } from '@/components/molecules/FeatureList'
 import { TwoColumnLayout } from '@/components/molecules/TwoColumnLayout'
-import { Button } from '@/components/atoms/Button'
+import { ExternalButton } from '@/components/atoms/ExternalButton'
 import { AnimatedSection } from '@/components/atoms/AnimatedSection'
 import { SITE } from '@/lib/constants'
 
+const accentWordsMap: Record<string, string[]> = {
+  en: ['Networking'],
+  es: ['Networking'],
+}
+
 export const Networking: FC = () => {
   const t = useTranslations('networking')
+  const locale = useLocale()
+  const accentWords = accentWordsMap[locale] || accentWordsMap.en
 
   const iconGrid = [
     { Icon: Hash, label: t('iconLabels.channels') },
@@ -23,19 +30,13 @@ export const Networking: FC = () => {
         title={t('title')}
         subtitle={t('subtitle')}
         className="text-left"
+        accentWords={accentWords}
       />
       <FeatureList features={t.raw('features') as string[]} />
       <div>
-        <a
-          href={SITE.discord}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block"
-        >
-          <Button variant="primary" size="lg">
-            {t('cta')}
-          </Button>
-        </a>
+        <ExternalButton href={SITE.discord} variant="primary" size="lg">
+          {t('cta')}
+        </ExternalButton>
       </div>
     </div>
   )
@@ -45,7 +46,7 @@ export const Networking: FC = () => {
       {iconGrid.map(({ Icon, label }) => (
         <div
           key={label}
-          className="flex flex-col items-center justify-center rounded-xl bg-surface p-6 shadow-sm"
+          className="flex flex-col items-center justify-center rounded-xl border border-border/50 bg-surface p-6 shadow-sm transition-shadow hover:shadow-md"
         >
           <Icon className="mb-2 h-8 w-8 text-accent" />
           <span className="text-sm font-medium text-muted">{label}</span>
@@ -55,7 +56,7 @@ export const Networking: FC = () => {
   )
 
   return (
-    <section id="networking" className="bg-surface-alt py-20">
+    <section id="networking" className="bg-surface-alt py-[5.75rem]">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
           <TwoColumnLayout left={left} right={right} />

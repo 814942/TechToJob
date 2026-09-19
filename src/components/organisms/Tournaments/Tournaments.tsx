@@ -1,18 +1,29 @@
 import { type FC } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { SectionHeader } from '@/components/molecules/SectionHeader'
 import { TournamentCard } from '@/components/molecules/TournamentCard'
 import { AnimatedSection } from '@/components/atoms/AnimatedSection'
 import { tournaments } from '@/data/tournaments'
 
+const accentWordsMap: Record<string, string[]> = {
+  en: ['Tournaments'],
+  es: ['Torneos'],
+}
+
 export const Tournaments: FC = () => {
   const t = useTranslations('tournaments')
+  const locale = useLocale()
+  const accentWords = accentWordsMap[locale] || accentWordsMap.en
 
   return (
-    <section id="tournaments" className="bg-surface py-20">
+    <section id="tournaments" className="bg-surface py-[5.75rem]">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
-          <SectionHeader title={t('title')} subtitle={t('subtitle')} />
+          <SectionHeader
+            title={t('title')}
+            subtitle={t('subtitle')}
+            accentWords={accentWords}
+          />
         </AnimatedSection>
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {tournaments.map((tournament, index) => (

@@ -1,24 +1,31 @@
 import { type FC } from 'react'
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { SectionHeader } from '@/components/molecules/SectionHeader'
 import { FeatureList } from '@/components/molecules/FeatureList'
 import { TwoColumnLayout } from '@/components/molecules/TwoColumnLayout'
-import { Button } from '@/components/atoms/Button'
+import { ExternalButton } from '@/components/atoms/ExternalButton'
 import { AnimatedSection } from '@/components/atoms/AnimatedSection'
 import { SITE } from '@/lib/constants'
 
+const accentWordsMap: Record<string, string[]> = {
+  en: ['company'],
+  es: ['empresa'],
+}
+
 export const Companies: FC = () => {
   const t = useTranslations('companies')
+  const locale = useLocale()
+  const accentWords = accentWordsMap[locale] || accentWordsMap.en
 
   const left = (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center overflow-hidden rounded-2xl border border-border/60 bg-surface shadow-xl shadow-primary/5 transition-shadow hover:shadow-2xl">
       <Image
         src="/assets/SVG/DashboardMockup.svg"
         alt={t('placeholder')}
-        width={400}
-        height={320}
-        className="h-auto w-full max-w-md"
+        width={352}
+        height={272}
+        className="block h-auto w-full"
       />
     </div>
   )
@@ -29,28 +36,22 @@ export const Companies: FC = () => {
         title={t('title')}
         subtitle={t('subtitle')}
         className="text-left"
+        accentWords={accentWords}
       />
       <FeatureList features={t.raw('features') as string[]} />
       <div>
-        <a
-          href={SITE.discord}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block"
-        >
-          <Button variant="primary" size="lg">
-            {t('cta')}
-          </Button>
-        </a>
+        <ExternalButton href={SITE.discord} variant="primary" size="lg">
+          {t('cta')}
+        </ExternalButton>
       </div>
     </div>
   )
 
   return (
-    <section id="companies" className="bg-surface-alt py-20">
+    <section id="companies" className="bg-surface-alt py-[5.75rem]">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
-          <TwoColumnLayout left={left} right={right} reverse />
+          <TwoColumnLayout left={right} right={left} reverse />
         </AnimatedSection>
       </div>
     </section>

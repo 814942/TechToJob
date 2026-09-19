@@ -28,7 +28,7 @@ export const TestimonialCard: FC<TestimonialCardProps> = ({
   return (
     <div
       className={cn(
-        'flex h-full flex-col rounded-xl border border-border bg-surface p-6 shadow-sm transition-shadow hover:shadow-md',
+        'flex h-full flex-col rounded-xl border border-border/50 bg-surface-alt p-6 shadow-sm transition-shadow hover:shadow-md',
         className
       )}
     >
